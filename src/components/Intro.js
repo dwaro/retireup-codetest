@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Intro = (props) => {
+/**
+ * Introduction to the page
+ */
+const Intro = () => {
   return (
     <div>
       <h2
