@@ -16,7 +16,6 @@ class DataTable extends Component {
       cumulativeReturn: 0.0,
     };
     this.handleSliderUpdate = this.handleSliderUpdate.bind(this);
-    //this.updateCumulativeReturn = this.updateCumulativeReturn.bind(this);
   }
 
   componentDidMount() {
@@ -71,10 +70,15 @@ class DataTable extends Component {
                 .map((data) => {
                   cumulativeReturn += parseFloat(data.totalReturn);
                   cumulativeReturn = Number(cumulativeReturn.toFixed(2));
+                  const negative = parseFloat(data.totalReturn) < 0.0;
                   return (
                     <tr key={data.year}>
                       <td>{data.year}</td>
-                      <td>{data.totalReturn}</td>
+                      {negative ? (
+                        <td style={{ color: 'red' }}>{data.totalReturn}</td>
+                      ) : (
+                        <td>{data.totalReturn}</td>
+                      )}
                       <td>{cumulativeReturn}</td>
                     </tr>
                   );
