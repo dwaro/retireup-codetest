@@ -29,7 +29,7 @@ class App extends Component {
     );
   }
   render() {
-    // format screen size off the initial load
+    // format the screen size at the initial load
     return <Formatter data={this.renderContent()} />;
   }
 }
