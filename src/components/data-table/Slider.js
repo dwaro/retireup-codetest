@@ -11,14 +11,9 @@ class Slider extends Component {
     this.state = {
       start: -1,
       end: -1,
-      Range: this.createSliderWithToolTip(),
+      Range: RcSlider.createSliderWithTooltip(RcSlider.Range),
     };
-    this.createSliderWithToolTip = this.createSliderWithToolTip.bind(this);
     this.updateYears = this.updateYears.bind(this);
-  }
-
-  createSliderWithToolTip() {
-    return RcSlider.createSliderWithTooltip(RcSlider.Range);
   }
 
   /**
