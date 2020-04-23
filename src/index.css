@@ -32,3 +32,48 @@ code {
 .table {
   margin: 50px 0px 0px 0px;
 }
+
+thead {
+  font-weight: bold;
+}
+
+.table {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table tr:hover {
+  background-color: rgb(130, 130, 130);
+  cursor: default;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: green;
+  color: white;
+}
+
+.table td,
+.table th {
+  border-top: 1px solid #ddd;
+  padding: 8px;
+}
+
+.rc-slider-track {
+  background-color: green !important;
+}
+
+.rc-slider-handle:hover {
+  border-color: green !important;
+}
+
+.rc-slider-handle {
+  border: solid 2px green !important;
+}
+
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+  box-shadow: 0 0 0 5px green !important;
+}

@@ -45,8 +45,12 @@ class Slider extends Component {
       return (
         <div className='slider'>
           <div>
-            <div style={{ float: 'left' }}>{this.state.start}</div>
-            <div style={{ float: 'right' }}>{this.state.end}</div>
+            <div style={{ float: 'left', fontWeight: 'bold' }}>
+              {this.state.start}
+            </div>
+            <div style={{ float: 'right', fontWeight: 'bold' }}>
+              {this.state.end}
+            </div>
           </div>
           <br />
           <br />
