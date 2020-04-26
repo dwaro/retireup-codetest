@@ -35,12 +35,27 @@ class DataTable extends Component {
     });
   }
 
-  // update slider years
+  /**
+   * update slider years
+   */
+
   handleSliderUpdate(value) {
     this.setState({
       currentStart: value[0],
       currentEnd: value[1],
     });
+  }
+
+  /**
+   * Format the cumulative returns to always use precision to second decimal place
+   * @param {*} num - cumulativeReturns float
+   */
+  formatNumber(num) {
+    let str = num.toString();
+    if (str[str.length - 3] !== '.') {
+      str += '0';
+    }
+    return str;
   }
 
   render() {
@@ -71,6 +86,7 @@ class DataTable extends Component {
                 .map((data) => {
                   cumulativeReturn += parseFloat(data.totalReturn);
                   cumulativeReturn = Number(cumulativeReturn.toFixed(2));
+                  const cumulativeDisplay = this.formatNumber(cumulativeReturn);
                   const negative = parseFloat(data.totalReturn) < 0.0;
                   return (
                     <tr key={data.year}>
@@ -80,7 +96,7 @@ class DataTable extends Component {
                       ) : (
                         <td>{data.totalReturn}</td>
                       )}
-                      <td>{cumulativeReturn}</td>
+                      <td>{cumulativeDisplay}</td>
                     </tr>
                   );
                 })}
